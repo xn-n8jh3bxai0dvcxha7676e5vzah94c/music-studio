@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解氷-歌詞</title>
+    <style>
+        .highlight {
+            color: #0000ff;
+        }
+
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center; /* 中央寄せ */
+        }
+
+        .sidebar {
+            background-color: #f0f0f0;
+            width: 100%;
+            height: 6vh; /* 高さを内容に合わせる */
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 5px; /* 上に移動 */
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            line-height: 2vh; /* 行間を調整 */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar li {
+            margin-right: 10px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px; /* 上下のパディングを減らす */
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+
+        .sidebar p {
+            margin: 0;
+            line-height: 2vh; /* 行間を調整 */
+        }
+
+        .sidebar img {
+            width: 4vh; /* お好みの幅に変更 */
+            height: auto; /* アスペクト比を保つ */
+        }
+
+        .content {
+            margin-top: 10vh; /* サイドバーがかぶらないように */
+            max-width: 800px; /* 最大幅を設定 */
+            padding: 10px; /* 内側の余白 */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><img src="https://file.i-i.f5.si/sound/IMG_7376.png"></li>
+            <li><p>「解氷」</p></li>
+            <li>
+              <p>作詞 作曲:
+                <a href="https://scratch.mit.edu/users/sei6sei">
+              <font color="#0102ff">
+                @sei6sei
+              </font>
+            </a>
+            </p>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <audio id="myAudio">
+            <source src="https://file.i-i.f5.si/sound/hyoukai.mp3" type="audio/mpeg">
+            お使いのブラウザはでは再生できません。
+        </audio>
+        <button onclick="playAudio()">視聴</button>
+        <script>
+            function playAudio() {
+                var audio = document.getElementById("myAudio");
+                audio.play();
+                const timings = [14.559, 16.091, 17.856, 21.419, 24.552, 28.414, 31.912, 35.242, 38.539, 41.971, 42.541, 45.705, 48.804, 52.699, 56.228, 63.892, 65.56, 67.092, 68.957, 70.755, 72.453, 74.255, 77.416, 91.84, 93.605, 95.371, 98.789, 100.652, 102.218, 104.05, 105.548, 106.28, 109.176, 112.903, 116.133, 119.798, 120.563, 123.661, 126.994, 128.957, 130.723, 134.053, 134.488, 136.152, 137.819, 141.25, 145.014, 147.845, 148.677, 151.675, 155.473, 158.671, 162.236, 162.536, 165.869, 169.468, 172.901, 176.333];
+                const paragraphs = document.querySelectorAll('#lyricsContainer p');
+                timings.forEach((time, index) => {
+                    if (index < paragraphs.length) {
+                        setTimeout(() => {
+                            if (index > 0) {
+                                paragraphs[index - 1].classList.remove('highlight');
+                            }
+                            paragraphs[index].classList.add('highlight');
+                        }, time * 1000);
+                    }
+                });
+            }
+        </script>
+        <div id="lyricsContainer">
+            <p>冷たい風が</p>
+            <p>頬を撫でる</p>
+            <p>氷の世界で一人佇む</p>
+            <p>時間の流れが止まったまま</p>
+            <p>全てが消えてゆく音を聞く</p>
+            <p>凍りついた涙の後に</p>
+            <p>過去の影が揺れている</p>
+            <p>消えゆく光を追いかけて</p>
+            <p>希望のカケラを探し求める</p>
+            <p>----------------</p>
+            <p>解氷の時が訪れて</p>
+            <p>夢のように儚く消える</p>
+            <p>記憶の中で溶けてゆく</p>
+            <p>二度と戻らないあの瞬間</p>
+            <p>----------------</p>
+            <p>淡い記憶が</p>
+            <p>氷の中に</p>
+            <p>閉じ込められて</p>
+            <p>眠っている</p>
+            <p>失われた</p>
+            <p>時間のカケラが</p>
+            <p>心の中で静かに響く</p>
+            <p>----------------</p>
+            <p>凍りついた</p>
+            <p>涙の跡に</p>
+            <p>過去の影が揺れている</p>
+            <p>消えゆく光を</p>
+            <p>追いかけて</p>
+            <p>希望のカケラを</p>
+            <p>探し求める</p>
+            <p>----------------</p>
+            <p>解氷の時が訪れて</p>
+            <p>夢のように儚く消える</p>
+            <p>記憶の中で溶けてゆく</p>
+            <p>二度と戻らないあの瞬間</p>
+            <p>----------------</p>
+            <p>消えてゆくものに意味を問う</p>
+            <p>刹那の輝きに魅せられて</p>
+            <p>手のひらの中</p>
+            <p>消えゆく氷</p>
+            <p>とはみつずく夢を見ている</p>
+            <p>----------------</p>
+            <p>冷たい世界に</p>
+            <p>色が戻る</p>
+            <p>氷が溶けて命が芽生える</p>
+            <p>失われたものが再び現れ</p>
+            <p>新たな希望が空を舞う</p>
+            <p>----------------</p>
+            <p>解氷の時が訪れて</p>
+            <p>夢のように儚く消える</p>
+            <p>記憶の中で溶けてゆく</p>
+            <p>二度と戻らないあの瞬間</p>
+            <p>----------------</p>
+            <p>消えゆくものの美しさを</p>
+            <p>胸に刻んで進んでゆく</p>
+            <p>新たな光を追いかけて</p>
+            <p>解氷のメロディーを奏でる</p>
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>歌詞の解釈・意味</p>
+        <font size="1" color="#ff0000">※この文章はAIによって生成しました。実際の解釈・意味とは違う可能性があります。</font>
+        <p>この作品は、冷たい氷の世界で孤独に佇む姿を描写し、時間や過去の影、そして失われたものへの思いを表現しています。解氷の瞬間が訪れ、過去の記憶が夢のように消え去る一方で、冒険心が芽生え、新たな希望が再生する様子が描かれています。消えてゆくものの美しさに対する感受性と、それらを胸に刻み、新たな光を追い求めて進んでいく姿勢が強調されています。
+        </p>
+    </div>
+</body>
+</html>
